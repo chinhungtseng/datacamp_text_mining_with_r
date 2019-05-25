@@ -9,6 +9,13 @@ output:
     highlight: github
 ---
 
+```{r, include=FALSE}
+if (!require("tidyverse")) install.packages("tidyverse")
+if (!require("tidytext")) install.packages("tidytext")
+
+```
+
+
 # Courses: [Text Mining with R | Data Camp](https://www.datacamp.com/tracks/text-mining-with-r?version=2)
 
 Different approaches to organizing and analyzing data of the text variety (books, articles, documents). A primer into regular expressions and ways to effectively search for common patterns in text is also provided

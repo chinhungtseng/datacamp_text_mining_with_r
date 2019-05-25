@@ -13,4 +13,4 @@ git rm -rf *
 cp -r ../_doc/* ./
 git add --all *
 git commit -m "update"
-git push -q origin ph-pages
+git push -q origin gh-pages
