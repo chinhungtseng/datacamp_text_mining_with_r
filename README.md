@@ -1,5 +1,7 @@
 # Course Notes | Text Mining with R | DataCamp
 
+[![Build Status](https://travis-ci.org/chinhungtseng/datacamp_text_mining_with_r.svg?branch=master)](https://travis-ci.org/chinhungtseng/datacamp_text_mining_with_r)
+
 # Courses: [Text Mining with R | Data Camp](https://www.datacamp.com/tracks/text-mining-with-r?version=2)
 
 Different approaches to organizing and analyzing data of the text variety (books, articles, documents). A primer into regular expressions and ways to effectively search for common patterns in text is also provided
@@ -8,9 +10,10 @@ Different approaches to organizing and analyzing data of the text variety (books
 
 Analyze text data in R using the tidy framework.
 
-- [Wrangling Text]()
-- [Visualizing Text]()
-- [Sentiment Analysis]()
+- [Wrangling Text](https://chinhungtseng.github.io/datacamp_text_mining_with_r/01.html)
+- [Visualizing Text](https://chinhungtseng.github.io/datacamp_text_mining_with_r/02.html)
+- [Sentiment Analysis](https://chinhungtseng.github.io/datacamp_text_mining_with_r/03.html)
+- [Topic Modeling](https://chinhungtseng.github.io/datacamp_text_mining_with_r/04.html)
 
 ## String Manipulation in R with stringr
 
