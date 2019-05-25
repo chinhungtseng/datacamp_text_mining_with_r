@@ -1,0 +1,13 @@
+---
+title: "Course Notes | Text Mining with R | DataCamp"
+author: "Peter"
+date: "`r Sys.Date()`"
+description: This is my note
+output:
+  prettydoc::html_pretty:
+    theme: Cayman
+    highlight: github
+    css: style.css
+---
+
+# Senetiment Analysis

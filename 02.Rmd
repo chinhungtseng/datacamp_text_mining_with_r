@@ -1,0 +1,17 @@
+---
+title: "Course Notes | Text Mining with R | DataCamp"
+author: "Peter"
+date: "`r Sys.Date()`"
+description: This is my note
+output:
+  prettydoc::html_pretty:
+    theme: Cayman
+    highlight: github
+    css: style.css
+---
+
+# Visualizing Text
+
+While counts are nice, visualizations are better. In this chapter, you will learn how to apply what you know and love from ggplot2 to tidy text data.
+
+## ...
