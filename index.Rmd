@@ -1,8 +1,8 @@
 ---
 title: "Course Notes | Text Mining with R | DataCamp"
-author: "Peter"
+author: ""
 date: "`r Sys.Date()`"
-description: This is my note
+description: "This is my note"
 output:
   prettydoc::html_pretty:
     theme: Cayman
@@ -12,7 +12,7 @@ output:
 ```{r, include=FALSE}
 if (!require("tidyverse")) install.packages("tidyverse")
 if (!require("tidytext")) install.packages("tidytext")
-
+if (!require("wordcloud")) install.packages("wordcloud")
 ```
 
 

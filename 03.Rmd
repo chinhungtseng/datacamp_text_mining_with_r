@@ -11,3 +11,47 @@ output:
 ---
 
 # Senetiment Analysis
+
+While word counts and visualizations suggest something about the content, we can do more. In this chapter, we move beyond word counts alone to analyze the sentiment or emotional valence of text.
+
+```{r, include=FALSE}
+library(tidyverse)
+library(tidytext)
+
+review_data <- read_csv("data/Roomba Reviews.csv")
+twitter_data <- readRDS("data/ch_1_twitter_data.rds")
+```
+
+## Sentiment dictionaries
+
+
+
+
+## Counting the NRC sentiments
+
+
+## Visualizing the NRC sentiments
+
+
+## Appending dictionaries
+
+
+## Counting sentiment
+
+
+## Visualizing sentiment
+
+
+## Improving sentiment analysis
+
+
+## Practicing reshaping data
+
+
+## Practicing with grouped summaries
+
+
+## Visualizing sentiment by complaint type
+
+
+
