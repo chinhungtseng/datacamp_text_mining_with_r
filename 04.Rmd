@@ -11,3 +11,50 @@ output:
 ---
 
 # Topic Modeling
+
+In this final chapter, we move beyond word counts to uncover the underlying topics in a collection of documents. We will be using a standard topic model known as latent Dirichlet allocation.
+
+## Latent Dirichlet allocation
+
+
+
+## Topics as word probabilities
+
+
+## Summarizing topics
+
+
+## Visualizing topics
+
+
+## Document term matrices
+
+
+## Creating a DTM
+
+
+## Evaluating a DTM as a matrix
+
+
+## Running topic models
+
+
+## Fitting an LDA
+
+
+## Tidying LDA output
+
+
+## Comparing LDA output
+
+
+## Interpreting topics
+
+
+## Naming three topics
+
+
+## Naming four topics
+
+
+## Wrap-up
