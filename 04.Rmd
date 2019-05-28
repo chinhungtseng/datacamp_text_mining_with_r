@@ -10,24 +10,145 @@ output:
     css: style.css
 ---
 
+```{r, include=FALSE}
+library(topicmodels)
+library(tidyverse)
+library(tidytext)
+
+# read files
+review_data <- read_csv("data/Roomba Reviews.csv")
+twitter_data <- readRDS("data/ch_1_twitter_data.rds")
+```
+
+
 # Topic Modeling
 
 In this final chapter, we move beyond word counts to uncover the underlying topics in a collection of documents. We will be using a standard topic model known as latent Dirichlet allocation.
 
 ## Latent Dirichlet allocation
 
+__Unsupervised learning__
 
+Some more natural language processing (NLP) vocabulary:
+
+- Latent Dirichlet allocation (LDA) is a standard topic model
+- A collection of documents is known as a corpus
+- Bag-of-words is treating every word in a document separately 
+- Topic models find patterns of words appearing together
+- Searching for patterns rather than predicting is known as unsupervised learning
+
+__Word probabilities__
+
+__Clustering vs. topic modeling__
+
+Clustering
+
+- Clusters are uncovered based on distance, which is continuous.
+- Every object is assigned to a single cluster. 
+
+Topic Modeling
+
+- Topics are uncovered based on word frequency, which is discrete. 
+- Every document is a mixture (i.e., partial member) of every topic.
 
 ## Topics as word probabilities
 
+### Exercise
+
+`lda_topics` contains the topics output from an LDA run on the Twitter data. Remember that each topic is a collection of word probabilities for all of the unique words used in the corpus. In this case, each tweet is its own document and the `beta` column contains the word probabilities.
+
+### Instructions 1/2
+
+Print the output from an LDA run on the Twitter data. It is stored in `lda_topics`.
+
+### script.R 1/2
+
+```{r, eval=FALSE}
+# Print the output from LDA run
+lda_topics
+```
+
+### Instructions 2/2
+
+Arrange the topics by word probabilities in descending order.
+
+### script.R 2/2
+
+```{r, collapse=TRUE, eval=FALSE}
+# Start with the topics output from the LDA run
+lda_topics %>% 
+  # Arrange the topics by word probabilities in descending order
+  arrange(desc(beta))
+```
 
 ## Summarizing topics
 
+### Exercise
+
+Let's explore some of the implied features of the LDA output using some grouped summaries.
+
+### Instructions
+
+- Produce a grouped summary of the LDA output by topic.
+- Calculate the sum of the word probabilities.
+- Count the number of terms.
+
+### script.R
+
+```{r, eval=FALSE}
+# Produce a grouped summary of the LDA output by topic
+lda_topics %>% 
+  group_by(topic) %>% 
+  summarize(
+    # Calculate the sum of the word probabilities
+    sum = sum(beta),
+    # Count the number of terms
+    n = n()
+  )
+```
 
 ## Visualizing topics
 
+### Exercise
+
+Using what we've covered in previous chapters, let's visualize the topics produced by the LDA.
+
+### Instructions
+
+- Keep the top 10 highest word probabilities by topic.
+- Create `term2`, a factor ordering `term` by word probability.
+- Plot `term2` and the word probabilities.
+- Facet the bar plot by (i.e., `~`) topic.
+
+### script.R
+
+```{r, eval=FALSE}
+word_probs <- lda_topics %>%
+  # Keep the top 10 highest word probabilities by topic
+  group_by(topic) %>% 
+  top_n(10, beta) %>% 
+  ungroup() %>%
+  # Create term2, a factor ordered by word probability
+  mutate(term2 = fct_reorder(term, beta))
+
+# Plot term2 and the word probabilities
+ggplot(word_probs, aes(term2, beta)) +
+  geom_col() +
+  # Facet the bar plot by topic
+  facet_wrap(~ topic, scales = "free") +
+  coord_flip()
+```
 
 ## Document term matrices
+
+__Matrices and Sparsity__
+
+```{r eval=FALSE}
+sparse_review
+```
+
+__Using cast_dtm()__
+
 
 
 ## Creating a DTM
